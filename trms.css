@@ -1,0 +1,102 @@
+body {
+    background-color: #3399CC;
+    color: #0e0d0d;
+    font-family: Verdana, Arial, sans-serif;
+    background-image: linear-gradient(to bottom, #3399CC, #C2E0F0, #3399CC);
+}
+
+header {
+    background-color: #000033;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    line-height: 200%;
+    background-image: url(images/sunset.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-left: 1em;
+    height: 72px;
+    margin-bottom: 0;
+}
+
+
+h2 {
+    color: #3399CC;
+    font-family: Georgia, serif;
+}
+
+h3 {
+    color: #000033;
+}
+
+
+
+footer {
+    font-size: .70em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    background-color: #FFFFFF;
+    
+}
+
+main {
+
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1px;
+    padding-top: 1em;
+    background-color: #FFFFFF;
+    
+    display: block;
+}
+
+
+
+#app{
+
+    margin: center;
+}
+
+#wrapper {
+    width: 80%;
+	
+
+    margin-left: auto;
+    margin-right: auto;
+	
+    background-color: #000033;
+    min-width: 700px;
+    max-width: 1024px;
+    box-shadow: 3px 3px 3px #000033;
+}
+
+
+table {
+    vertical-align: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #252223;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px;
+    border: 1px solid #404242;
+}
+
+td {
+    text-align: center;
+}
+
+.text {
+    text-align: left;
+}
+
+tr:nth-of-type(even) {
+    background-color: #F5FAFC;
+}

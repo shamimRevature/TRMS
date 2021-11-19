@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="trms.css">
+   
+    <title>New Application</title>
+</head>
+<body>       
+   <center>
+    <H1>Reimbursement Application Form</H1>
+   </center>
+    
+
+
+    <table>
+     <tr>
+       <th><label for="empName" >Applicant Name</label></th>
+       <td><input type="text"  id="empName"></td>
+     </tr>
+     <tr>
+       <th><label for="empId" >Employee ID</label></th>
+       <td><input type="text"  id="empId"></td>
+     </tr>
+     <tr>
+       <th><label for="eventId" >Event ID</label></th>
+       <td><input type="text"  id="eventId"></td>
+     </tr>
+     <tr>
+       <th><label for="startDate" >Start Date</label></th>
+       <td><input type="text"  id="startDate"></td>
+     </tr>
+ 
+     <tr>
+       <th><label for="endDate" >End Date</label></th>
+       <td><input type="text"  id="endDate"></td>
+     </tr>
+     <tr>
+       <th><label for="cost" >Program Cost</label></th>
+       <td><input type="text"  id="cost"></td>
+     </tr>
+ 
+     <tr>
+       <th><label for="urgent" >Urgent</label></th>
+         <td>
+            <label for="yes">Yes</label>
+            <input type="radio" id="yes" value="true" name="urgent">
+            <label for="no">No</label>
+            <input type="radio" id="no" value="false" name="urgent"><br>
+         </td>
+   </tr>
+ 
+     <tr>
+       <th><label for="related" >Work Related</label></th>
+         <td>
+            <label for="yes">Yes</label>
+            <input type="radio" id="yes" value="true" name="related">
+            
+            
+            <label for="no">No</label>
+            <input type="radio" id="no" value="false" name="related"><br>
+         </td>
+   </tr>
+ 
+   </table>
+ 
+  <center>
+     <P>Optionally include: Event-related attachments of pdf, png, jpeg, txt, or doc file type, 
+       attachments<br> of approvals already provided of .msg (Outlook Email File) file type and 
+       type of approval <br>work time that will be missed.
+     </P>
+     <label for="myfile">Select files:</label>
+     <input type="file" id="myfile" name="myfile" multiple><br><br>
+    
+    <button onclick = "sendApplication()">Submit Application</button>
+</center><br>
+
+<center><a href="C:\Users\topuc\Desktop\Project 1_TRMS\application_status.html">Check the Status</a></center>
+</body>
+
+
+<script>
+
+async function sendApplication() {
+
+const name = document.getElementById("empName").value;
+const empid = document.getElementById("empId").value;
+const eventid = document.getElementById("eventId").value;
+const start = document.getElementById("startDate").value;
+const end = document.getElementById("endDate").value;
+const cost = document.getElementById("cost").value;
+
+let urgent = false;
+urgent = document.querySelector('input[name="urgent"]:checked').value;
+
+let related = false;
+related = document.querySelector('input[name="related"]:checked').value;
+
+
+// console.log(titleValue);
+// console.log(priceValue);
+// console.log(availableValue);
+
+const data = {
+    // title: titleValue,
+    // price: priceValue,
+    // available: availableValue
+
+    enventId: eventid,
+    empId: empid,
+    empName: name,
+    eventStartDate: start,
+    eventEndDate: end,
+    cost: cost,
+    urgent: urgent,
+    workRelated: related,
+    status_id: 1
+    
+}
+
+
+
+const url = "http://localhost:7000/newapplication";
+
+const httpResponse = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data)
+});
+
+const body = await httpResponse.json();
+
+console.log(body);
+
+document.getElementById("response").innerHTML = (body && body != {}) ? "Application Successfully Added!" : "Application Failed";
+
+}
+
+
+
+</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="trms.css">
+   
+    <title>Application Status</title>
+</head>
+<body>       
+   
+<center>
+    <H1>My Aplication Status</H1>
+    <label for="id">Application ID</label>
+    <input type="text" id="infoid">
+    <button onclick="checkInformation()">Check Information</button>
+
+<p>Please check the below information for you check the status</p>
+
+</center>
+</center>
+<table>
+      <tr>
+        <th>Application ID</th>
+        <th>Event ID</th>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Event Start Date</th>
+        <th>Event End Date</th>
+        <th>Event Cost</th>
+        <th>Grade</th>
+        <th>Urgent</th>
+        <th>Work Related</th>
+        <th>Status</th>
+      </tr>
+
+      <tr>
+        <td id = "appId">--</th>
+        <td id="eventId">--</th>
+        <td id="empId">--</td>
+        <td id="empName">--</td>
+        <td id = "startDate">--</th>
+        <td id="EndDate">--</th>
+        <td id="cost">--</td>
+        <td id="grade">--</td>
+        <td id="urgent">--</th>
+        <td id="related">--</td>
+        <td id="status">--</td>
+      </tr>
+   
+  </table>
+  <br>
+      <center>
+      <label for="id">Status</label>
+      <input type="text" id="statusid">
+      <button onclick="getStatus()">Check Status</button>
+      <h1 id="result" ></h1>
+    </center>
+
+    <center><a href="C:\Users\topuc\Desktop\Project 1_TRMS\dashboard.html">Dashboard</a></center>
+
+</body>
+
+<script>
+
+    async function checkInformation() {
+
+        const id = document.getElementById("infoid").value;
+        const url = `http://localhost:7000/application/`+ id;
+
+        const httpResponse = await fetch(url);
+        const body = await httpResponse.json();
+
+        console.log(body);
+
+        document.getElementById("appId").innerHTML = body.appId + "<br>";
+        document.getElementById("eventId").innerHTML = body.enventId+ "<br>";
+        document.getElementById("empId").innerHTML = body.empId+ "<br>";
+        document.getElementById("empName").innerHTML = body.empName+ "<br>";
+        document.getElementById("startDate").innerHTML = body.eventStartDate + "<br>";
+        document.getElementById("EndDate").innerHTML = body.eventEndDate+ "<br>";
+        document.getElementById("cost").innerHTML = body.cost+ "<br>";
+        document.getElementById("grade").innerHTML = body.grade+ "<br>";
+        document.getElementById("urgent").innerHTML = body.urgent+ "<br>";
+        document.getElementById("related").innerHTML = body.workRelated+ "<br>";
+        document.getElementById("status").innerHTML = body.status_id+ "<br>";
+    }
+
+
+    
+async function getStatus() {
+
+const id = document.getElementById("statusid").value;
+const url = `http://localhost:7000/status/`+id;
+
+const httpResponse = await fetch(url);
+const body = await httpResponse.json(); 
+
+console.log(body);
+
+document.getElementById("result").innerHTML = body.statusName;
+
+
+}
+
+</script>
+
+</html>

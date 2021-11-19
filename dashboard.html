@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="trms.css">
+   
+    <title>dashboard</title>
+</head>
+<body>       
+   
+<center>
+    <H1> Application Dashboard</H1>
+
+    <button onclick = "info()">All Applicant List</button><br><br>
+
+</center>
+    <table>
+          <tr>
+            <th>Application ID</th>
+            <th>Event ID</th>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Event Start Date</th>
+            <th>Event End Date</th>
+            <th>Event Cost</th>
+            <th>Grade</th>
+            <th>Urgent</th>
+            <th>Work Related</th>
+            <th>Status</th>
+          </tr>
+   
+          <tr>
+            <td id = "appId0">--</th>
+            <td id="eventId0">--</th>
+            <td id="empId0">--</td>
+            <td id="empName0">--</td>
+            <td id = "startDate0">--</th>
+            <td id="EndDate0">--</th>
+            <td id="cost0">--</td>
+            <td id="grade0">--</td>
+            <td id="urgent0">--</th>
+            <td id="related0">--</td>
+            <td id="status0">--</td>
+          </tr>
+          <tr>
+            <td id = "appId1">--</th>
+            <td id="eventId1">--</th>
+            <td id="empId1">--</td>
+            <td id="empName1">--</td>
+            <td id = "startDate1">--</th>
+            <td id="EndDate1">--</th>
+            <td id="cost1">--</td>
+            <td id="grade1">--</td>
+            <td id="urgent1">--</th>
+            <td id="related1">--</td>
+            <td id="status1">--</td>
+          </tr>
+          <tr>
+            <td id = "appId2">--</th>
+            <td id="eventId2">--</th>
+            <td id="empId2">--</td>
+            <td id="empName2">--</td>
+            <td id = "startDate2">--</th>
+            <td id="EndDate2">--</th>
+            <td id="cost2">--</td>
+            <td id="grade2">--</td>
+            <td id="urgent2">--</th>
+            <td id="related2">--</td>
+            <td id="status2">--</td>
+          </tr>          
+          <tr>
+            <td id = "appId3">--</th>
+            <td id="eventId3">--</th>
+            <td id="empId3">--</td>
+            <td id="empName3">--</td>
+            <td id = "startDate3">--</th>
+            <td id="EndDate3">--</th>
+            <td id="cost3">--</td>
+            <td id="grade3">--</td>
+            <td id="urgent3">--</th>
+            <td id="related3">--</td>
+            <td id="status3">--</td>
+          </tr>
+          <tr>
+            <td id = "appId4">--</th>
+            <td id="eventId4">--</th>
+            <td id="empId4">--</td>
+            <td id="empName4">--</td>
+            <td id = "startDate4">--</th>
+            <td id="EndDate4">--</th>
+            <td id="cost4">--</td>
+            <td id="grade4">--</td>
+            <td id="urgent4">--</th>
+            <td id="related4">--</td>
+            <td id="status4">--</td>
+          </tr>
+          <tr>
+            <td id = "appId5">--</th>
+            <td id="eventId5">--</th>
+            <td id="empId5">--</td>
+            <td id="empName5">--</td>
+            <td id = "startDate5">--</th>
+            <td id="EndDate5">--</th>
+            <td id="cost5">--</td>
+            <td id="grade5">--</td>
+            <td id="urgent5">--</th>
+            <td id="related5">--</td>
+            <td id="status5">--</td>
+          </tr>
+
+          <tr>
+            <td id = "appId6">--</th>
+            <td id="eventId6">--</th>
+            <td id="empId6">--</td>
+            <td id="empName6">--</td>
+            <td id = "startDate6">--</th>
+            <td id="EndDate6">--</th>
+            <td id="cost6">--</td>
+            <td id="grade6">--</td>
+            <td id="urgent6">--</th>
+            <td id="related6">--</td>
+            <td id="status6">--</td>
+          </tr>
+          <tr>
+            <td id = "appId7">--</th>
+            <td id="eventId7">--</th>
+            <td id="empId7">--</td>
+            <td id="empName7">--</td>
+            <td id = "startDate7">--</th>
+            <td id="EndDate7">--</th>
+            <td id="cost7">--</td>
+            <td id="grade7">--</td>
+            <td id="urgent7">--</th>
+            <td id="related7">--</td>
+            <td id="status7">--</td>
+          </tr>
+       
+      </table>
+      <center>
+      <label for="id">Application Waiting for Supervisor decession </label><br>
+      
+      <button onclick="supervisor()">Under Supervisor</button><br><br>
+
+      
+      <label for="id">Application Waiting for Department Head decession </label><br>
+      
+      <button onclick="departmentHead()">Under Department</button><br><br>
+
+           
+      <label for="id">Application Waiting for Benifit Coordinator decession </label><br>
+      
+      <button onclick="Benifit()">Under Benifit Co.</button><br><br>
+
+      <button onclick="reload()">reload</button><br><br>
+
+
+
+    </center>
+    <center><a href="C:\Users\topuc\Desktop\Project 1_TRMS\supervisor.html">Supervisor</a></center><br>
+    <center><a href="C:\Users\topuc\Desktop\Project 1_TRMS\departmenthead.html">Department Head</a></center><br>
+    <center><a href="C:\Users\topuc\Desktop\Project 1_TRMS\benco.html">Benifit Coordinator</a></center><br>
+
+</body>
+
+<script>
+
+    async function info() {
+
+
+
+      
+        const url1 = `http://localhost:7000/applications/`;
+
+        const httpResponse = await fetch(url1);
+        const body = await httpResponse.json();
+
+        console.log(body);
+        
+
+        for (let i = 0; i< body.length ; i++) {
+      
+
+        document.getElementById("appId"+i).innerHTML = body[i].appId + "<br>";
+        document.getElementById("eventId"+i).innerHTML = body[i].enventId+ "<br>";
+        document.getElementById("empId"+i).innerHTML = body[i].empId+ "<br>";
+        document.getElementById("empName"+i).innerHTML = body[i].empName+ "<br>";
+        document.getElementById("startDate"+i).innerHTML = body[i].eventStartDate + "<br>";
+        document.getElementById("EndDate"+i).innerHTML = body[i].eventEndDate+ "<br>";
+        document.getElementById("cost"+i).innerHTML = body[i].cost+ "<br>";
+        document.getElementById("grade"+i).innerHTML = body[i].empName+ "<br>";
+        document.getElementById("urgent"+i).innerHTML = body[i].urgent+ "<br>";
+        document.getElementById("related"+i).innerHTML = body[i].workRelated+ "<br>";
+        document.getElementById("status"+i).innerHTML = body[i].status_id+ "<br>";
+
+        }
+        
+        }
+
+    
+
+async function supervisor() {
+
+  
+
+ const url1 = `http://localhost:7000/applications/`;
+
+ const httpResponse = await fetch(url1);
+ const body = await httpResponse.json();
+
+ console.log(body);
+ 
+ for (let i = 0; i< body.length ; i++) {
+     if (body[i].status_id < 6){
+
+ document.getElementById("appId"+i).innerHTML = body[i].appId + "<br>";
+ document.getElementById("eventId"+i).innerHTML = body[i].enventId+ "<br>";
+ document.getElementById("empId"+i).innerHTML = body[i].empId+ "<br>";
+ document.getElementById("empName"+i).innerHTML = body[i].empName+ "<br>";
+ document.getElementById("startDate"+i).innerHTML = body[i].eventStartDate + "<br>";
+ document.getElementById("EndDate"+i).innerHTML = body[i].eventEndDate+ "<br>";
+ document.getElementById("cost"+i).innerHTML = body[i].cost+ "<br>";
+ document.getElementById("grade"+i).innerHTML = body[i].empName+ "<br>";
+ document.getElementById("urgent"+i).innerHTML = body[i].urgent+ "<br>";
+ document.getElementById("related"+i).innerHTML = body[i].workRelated+ "<br>";
+ document.getElementById("status"+i).innerHTML = body[i].status_id+ "<br>";
+
+     }
+ }
+
+}
+
+
+async function departmentHead() {
+  
+
+const url1 = `http://localhost:7000/applications/`;
+
+const httpResponse = await fetch(url1);
+const body = await httpResponse.json();
+
+console.log(body);
+
+for (let i = 0; i< body.length ; i++) {
+    if ((body[i].status_id > 5) && (body[i].status_id < 11)){
+
+document.getElementById("appId"+i).innerHTML = body[i].appId + "<br>";
+document.getElementById("eventId"+i).innerHTML = body[i].enventId+ "<br>";
+document.getElementById("empId"+i).innerHTML = body[i].empId+ "<br>";
+document.getElementById("empName"+i).innerHTML = body[i].empName+ "<br>";
+document.getElementById("startDate"+i).innerHTML = body[i].eventStartDate + "<br>";
+document.getElementById("EndDate"+i).innerHTML = body[i].eventEndDate+ "<br>";
+document.getElementById("cost"+i).innerHTML = body[i].cost+ "<br>";
+document.getElementById("grade"+i).innerHTML = body[i].empName+ "<br>";
+document.getElementById("urgent"+i).innerHTML = body[i].urgent+ "<br>";
+document.getElementById("related"+i).innerHTML = body[i].workRelated+ "<br>";
+document.getElementById("status"+i).innerHTML = body[i].status_id+ "<br>";
+
+    }
+}
+
+
+
+}
+
+async function Benifit() {
+ 
+
+const url1 = `http://localhost:7000/applications/`;
+
+const httpResponse = await fetch(url1);
+const body = await httpResponse.json();
+
+console.log(body);
+
+for (let i = 0; i< body.length ; i++) {
+    if (body[i].status_id > 10){
+
+document.getElementById("appId"+i).innerHTML = body[i].appId + "<br>";
+document.getElementById("eventId"+i).innerHTML = body[i].enventId+ "<br>";
+document.getElementById("empId"+i).innerHTML = body[i].empId+ "<br>";
+document.getElementById("empName"+i).innerHTML = body[i].empName+ "<br>";
+document.getElementById("startDate"+i).innerHTML = body[i].eventStartDate + "<br>";
+document.getElementById("EndDate"+i).innerHTML = body[i].eventEndDate+ "<br>";
+document.getElementById("cost"+i).innerHTML = body[i].cost+ "<br>";
+document.getElementById("grade"+i).innerHTML = body[i].empName+ "<br>";
+document.getElementById("urgent"+i).innerHTML = body[i].urgent+ "<br>";
+document.getElementById("related"+i).innerHTML = body[i].workRelated+ "<br>";
+document.getElementById("status"+i).innerHTML = body[i].status_id+ "<br>";
+
+    }
+}
+
+
+
+}
+
+async function reload() 
+{
+  location.reload();
+}
+
+// function showa (data)
+// {
+
+//     let tab =<thead class="thead-light">
+//           <tr>
+//             <th scope="col">Request Id</th>
+//             <th scope="col">Name</th>
+//             <th scope="col">Status</th>
+//             <th scope="col">Status</th>
+//             <th scope="col">Approval #</th>
+//           </tr>
+//         </thead>;
+
+//     let tab =<tr>
+//           <th>Form Id</th>
+//           <th>Employee Id</th>
+//           <th>Date Id</th>
+//           <th>Date Id</th>
+//           <th>      </th>
+
+//          </tr>;
+
+//          let a=1;
+//          for (let r of data) 
+//          {
+
+//                         tab += 
+//                 <tr> 
+//                     <td>${r.requestFK} </td>
+//                     <td>${r.directS}</td>
+//                     <td>${r.departmentH}</td>  
+//                     <td>${r.benCO}</td>   
+//                     <td><button onclick=caller(${a})>button ${a} </button></td>       
+//                 </tr>;
+//                 a++
+//         }
+
+//     document.getElementById("tbid").innerHTML = tab;
+
+// } 
+
+</script>
+
+</html>

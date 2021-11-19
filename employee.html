@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="trms.css">
+   
+    <title>Employee Login</title>
+</head>
+<body>       
+   
+
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="login"  name="login" placeholder="User ID"></td>
+                <td><input type="password" id="password"  name="login" placeholder="password"></td>
+
+            </tr>
+
+    
+        </table>
+
+        <center>
+             
+            <label for="related" >Select the option before login</label><br>
+        
+            <label for="yes">Regular Employee</label>
+            <input type="radio" id="yes" value="true" name="related">
+            
+            
+            <label for="no">Management</label>
+            <input type="radio" id="no" value="false" name="related"><br>
+        
+            <button onclick = "page()">Login</button></center>
+
+    
+
+
+    
+</body>
+
+<Script>
+
+async function page() {
+
+    
+let urgent = document.querySelector('input[name="related"]:checked').value;
+
+if (urgent == "true"){
+
+    window.location = "application_status.html";
+
+}else{
+
+    window.location = "dashboard.html";
+}
+
+
+}
+
+</Script>
+</html>
